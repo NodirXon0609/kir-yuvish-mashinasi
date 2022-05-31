@@ -4,13 +4,83 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project</title>
+  <title>Kir yuvish mashinasi</title>
 
-<!-- Stylesheets -->
-<link rel="stylesheet" href="css/normalize.css">
-<link rel="stylesheet" href="css/styles.css">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
+  <main class="main-content">
+    <div class="container">
+      <h1 class="visually-hidden">Washing machine interface</h1>
+      <!-- WASHING-MODE-LIST-BEGIN -->
+      <ul class="washing-mode-list">
+        <!-- WASHING-MODE-ITEM -->
+        <li class="washing-mode-item  washing-mode-item-active">
+          <a class="washing-mode-link" href="#">synthetic</a>
+        </li>
+        <!-- WASHING-MODE-ITEM -->
+        <li class="washing-mode-item">
+          <a class="washing-mode-link" href="#">wool</a>
+        </li>
+        <!-- WASHING-MODE-ITEM -->
+        <li class="washing-mode-item">
+          <a class="washing-mode-link" href="#">denim</a>
+        </li>
+        <!-- WASHING-MODE-ITEM -->
+        <li class="washing-mode-item">
+          <a class="washing-mode-link" href="#">silk</a>
+        </li>
+        <!-- WASHING-MODE-ITEM -->
+        <li class="washing-mode-item">
+          <a class="washing-mode-link" href="#">linen</a>
+        </li>
+      </ul>
+      <!-- WASHING-MODE-END -->
+
+      <!-- WASHING-MODE-NOTE -->
+      <p class="washing-mode-note">
+        Loads should be under 8 pounds. It is recommended using neutral detergent to prevent damage to the cloth and to improve the washing results.
+      </p>
+
+      <!-- WASHING-MODE-INFORMATION -->
+      <div class="washing-mode-info">
+        <!-- WASHING-MODE-PREVIOUS -->
+        <button class="washing-mode-controller washing-mode-previous" type="button">
+          <img class="washing-mode-controller-img" src="img/icon-arrow-left.svg" alt="Previous" width="48" height="48">
+        </button>
+
+        <!-- WASHING-MODE-NEXT -->
+        <button class="washing-mode-controller washing-mode-next" type="button">
+          <img class="washing-mode-controller-img" src="img/icon-arrow-right.svg" alt="Next" width="48" height="48">
+        </button>
+
+        <!-- START-BUTTON -->
+        <button class="start-button" type="button">start</button>
+
+        <!-- WASHING-MODE-CHANCE -->
+        <dl class="washing-mode-chance">
+          <!-- WASHING-MODE-CHANGE-ITEM -->
+          <div class="washing-mode-chance-item washing-mode-chance-item-timer">
+            <dt class="washing-mode-term">Timer</dt>
+            <dd class="washing-mode-detail">45 min</dd>
+          </div>
+          <!-- WASHING-MODE-CHANGE-ITEM -->
+          <div class="washing-mode-chance-item washing-mode-chance-item-temperature">
+            <dt class="washing-mode-term">Temperature</dt>
+            <dd class="washing-mode-detail">Cold</dd>
+          </div>
+          <!-- WASHING-MODE-CHANGE-ITEM -->
+          <div class="washing-mode-chance-item washing-mode-chance-item-load">
+            <dt class="washing-mode-term">Load</dt>
+            <dd class="washing-mode-detail">Medium</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </main>
 
 
   <script src="js/main.js"></script>

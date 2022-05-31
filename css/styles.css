@@ -1,7 +1,42 @@
+/* CUSTOM PROPERTIES */
+:root {
+  --bg-color: #f0837d;
+  --white-color: #fff;
+}
+
+/* FONTS */
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Medium.woff2") format("woff2"),
+  url("../fonts/Roboto-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.woff2") format("woff2"),
+  url("../fonts/Roboto-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Bold.woff2") format("woff2"),
+  url("../fonts/Roboto-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 /* GLOBAL */
 html {
-  box-sizing: border-box;
   height: 100%;
+  box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
@@ -11,17 +46,26 @@ html {
   box-sizing: inherit;
 }
 
+
+/* OUTLINE STYLES */
+*:focus {
+  outline: 2px dotted #fff;
+  outline-offset: 2px;
+}
+
+
 body {
   display: flex;
   flex-direction: column;
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: "Arial", sans-serif;
+  font-family: "Roboto", "Arial", sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  background-color: #fff;
-  color: #222;
+  background-color: var(--bg-color);
+  color: var(--white-color);
+  overflow-x: hidden;
 }
 
 img {
@@ -29,10 +73,11 @@ img {
   height: auto;
 }
 
+
 /* CONTAINER  */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 880px;
   padding-left: 50px;
   padding-right: 50px;
   margin-left: auto;
@@ -42,5 +87,164 @@ img {
 
 /* MAIN-CONTENT */
 .main-content {
-flex-grow: 1;
+  flex-grow: 1;
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* WASHING-MODE-LIST-BEGIN */
+.washing-mode-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+.washing-mode-item:not(:last-child) {
+  margin-right: 55px;
+}
+
+.washing-mode-link {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  color: #f8b6af;
+  font-size: 50px;
+  transition: color 0.5s ease,
+  opacity 0.5s ease;
+}
+
+.washing-mode-link:hover {
+  color: #f8f6ff;
+}
+
+.washing-mode-link:active {
+  opacity: 0.8;
+}
+
+.washing-mode-item-active .washing-mode-link {
+  color: var(--white-color);
+}
+
+.washing-mode-note {
+  max-width: 550px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 55px;
+  font-size: 14px;
+}
+
+/* WASHING-MODE-LIST-END */
+
+
+/* WASHING-MODE-INFORMATION-BEGIN */
+.washing-mode-info {
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+}
+
+.washing-mode-controller {
+  width: 86px;
+  height: 86px;
+  border: 0;
+  padding: 0;
+  background-color: #f8b6af;
+  position: absolute;
+  cursor: pointer;
+  transition: background-color 0.5s ease,
+  opacity 0.5s ease;
+}
+
+.washing-mode-controller:hover {
+  background-color: var(--white-color);
+}
+
+.washing-mode-controller:active {
+  opacity: 0.8;
+}
+
+.washing-mode-previous {
+  transform: translateX(-100%);
+}
+
+.washing-mode-next {
+  right: 0;
+  transform: translateX(100%);
+}
+
+.start-button {
+  border: 0;
+  bottom: 0;
+  left: 20px;
+  width: 220px;
+  padding: 20px;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 5px;
+  position: absolute;
+  color: var(--white-color);
+  background-color: #191a19;
+  text-transform: uppercase;
+  transform: translateY(50%);
+  transition: transform 0.5s ease,
+  background-color 0.5s ease;
+}
+
+.start-button:hover {
+  transform: translateY(45%);
+}
+
+.start-button:active {
+  background-color: #222;
+}
+
+.washing-mode-chance {
+  display: flex;
+  margin: 0;
+}
+
+.washing-mode-chance-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 55px;
+  width: 260px;
+  height: 260px;
+}
+
+.washing-mode-term {
+  color: var(--bg-color);
+}
+
+.washing-mode-detail {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.washing-mode-chance-item-timer {
+  background-color: #403f40;
+}
+
+.washing-mode-chance-item-temperature {
+  background-color: #373536;;
+}
+
+.washing-mode-chance-item-load {
+  background-color: #252424;
+}
+
+/* WASHING-MODE-INFORMATION-END */
